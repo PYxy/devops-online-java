@@ -28,7 +28,8 @@ spec:
               value: js|html
             - name: CACHE_PUBLIC_EXPIRATION
               value: 3d
-          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER
+          #image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER  在 $BRANCH_NAME 默认不选的时候就会有问题 docker.io/ljy2022/devops-sample:SNAPSHOT--18
+          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
           readinessProbe:
             httpGet:
               path: /
